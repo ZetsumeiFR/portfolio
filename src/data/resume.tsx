@@ -1,5 +1,5 @@
-import { HomeIcon, NotebookIcon } from "lucide-react";
 import { Icons } from "@/components/icons";
+import { HomeIcon, NotebookIcon } from "lucide-react";
 
 // calculate experience in years dynamically
 const experience = new Date().getFullYear() - 2019;
@@ -41,7 +41,7 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/AbsolumFrAG",
+        url: "https://github.com/ZetsumeiFR",
         icon: Icons.github,
         navbar: true,
       },

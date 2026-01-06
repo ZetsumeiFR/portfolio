@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://reverse-call.dev;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.reverse-call.dev https://*.posthog.com https://*.i.posthog.com;
   style-src 'self' 'unsafe-inline';
   img-src 'self' blob: data:;
   font-src 'self';
@@ -10,6 +10,7 @@ const cspHeader = `
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'none';
+  connect-src 'self' https://*.posthog.com https://*.i.posthog.com;
   upgrade-insecure-requests;
 `;
 

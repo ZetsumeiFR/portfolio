@@ -10,7 +10,7 @@ const cspHeader = `
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'none';
-  connect-src 'self' https://*.posthog.com https://*.i.posthog.com;
+  connect-src 'self' https://*.posthog.com https://*.i.posthog.com https://*.reverse-call.dev wss://*.reverse-call.dev;
   upgrade-insecure-requests;
 `;
 

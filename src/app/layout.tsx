@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 import type { ReactNode } from "react";
+import { headers } from "next/headers";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -76,16 +77,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
+          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",

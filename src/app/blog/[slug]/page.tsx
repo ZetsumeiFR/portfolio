@@ -3,6 +3,7 @@ import { getBlogPosts, getPost } from "@/data/blog";
 import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
 import { Metadata } from "next";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -83,10 +84,13 @@ export default async function Blog(props: {
     },
   };
 
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <section id="blog">
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd),
         }}

@@ -5,7 +5,6 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
-import Script from "next/script";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -114,22 +113,6 @@ export default function RootLayout({
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
-        <Script
-          id="reverse-call-config"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.ReverseCallConfig = {
-                token: 'eyJhbGciOiJIUzI1NiJ9.eyJvcmdhbml6YXRpb25JZCI6Im1PU2RtTWM1a2Q4Wi1KbG0iLCJhcGlLZXkiOiJwaGNfWTJ3c0YxSFNEMTdBUDRMb044QURXbTF1bDhSRDVFVEZoSWphMVRjaE11dyIsInNvY2tldFVybCI6Imh0dHBzOi8vd3MucmV2ZXJzZS1jYWxsLmRldiIsInBvc3Rob2dIb3N0IjoiaHR0cHM6Ly9ldS5pLnBvc3Rob2cuY29tIiwiaXNzdWVkQXQiOjE3Njc3MDM2NTksImlhdCI6MTc2NzcwMzY1OSwic3ViIjoibU9TZG1NYzVrZDhaLUpsbSIsImlzcyI6InJldmVyc2UtY2FsbCIsImF1ZCI6InNuaXBwZXQifQ.TvycpQb_PGLRlLt-oqNCEoKn0-6O16vYMUDmp5xHGxE'
-              };
-            `,
-          }}
-        />
-        <Script
-          id="reverse-call-widget"
-          src="https://reverse-call.dev/cdn/widget.js"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
